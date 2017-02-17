@@ -19,7 +19,7 @@ Once go is running and you have a $GOPATH set, get the class repo:
 
 $ go get -v github.com/mit-dci/6.892-public
 
-In this repo, there is a folder called `hw`, in which there's `utxohunt`, which contains 4 files:
+In this repo there are 4 files:
 ```
 main.go
 addrfrompriv.go  
