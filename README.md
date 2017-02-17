@@ -1,5 +1,7 @@
 # utxohunt
 
+### Office hours for this lab: Tuesday, Feb 21st, 1 to 4pm, E15-357 (Media lab DCI office)
+
 For the first assignment, we're going to make some transactions on the Bitcoin test network.  We're using btcd as our libraries, which is bitcoin written in golang.  The goal is to understand how transactions are constructed and signed, and to become familiar with the utxo model bitcoin uses.
 
 Testnet3 is a network for testing out bitcoin.  It works almost exactly like the regular bitcoin network (small changes to addresses, the difficulty of proof of work) but everyone agrees that the testnet coins are not worth anything.  This isn't enforced by anything on the network, it's just something people decide.  The fact that it's testnet3 indicates that this rule failed for testnets 1 and 2, when people started trading the testnet coins for mainnet coins.
