@@ -54,9 +54,7 @@ Save this address (it starts with an "m").  You'll need this to send the money t
 A _block explorer_ is a website which watches the blockchain and parses out information about blocks, addresses, and transactions.  You can use this blockexplorer to see what's happening on the Bitcoin testnet: [https://testnet.smartbit.com.au/](https://testnet.smartbit.com.au/).
 
 We created a transaction with hundreds of outputs.
-a56f06aa7dbc3b3ba86390f163f3639e962d3e223e9ca070002288eb555bb830 is
-the "txid" or unique identifier of the transaction.  (The txid is the
-hash of the serialized transaction)
+`a56f06aa7dbc3b3ba86390f163f3639e962d3e223e9ca070002288eb555bb830` is the "txid" or unique identifier of the transaction.  (The txid is the hash of the serialized transaction)
 
 This transaction has many outputs.  The outputs are on the right side, and the single input (witness_v0_keyhash) is on the left side.
 
@@ -109,17 +107,41 @@ error:
 If everything worked, you'll see a txid returned (64 hex characters; 32 bytes).  That means you got money.  You can use the same EZTxBuilder() to send that money somewhere else.
 
 
+## Further steps / bonus money
+
+Try to get some more money.  This is doable with just the block explorer.  There are more unspent outputs on the network to find.  One has a private key which is the double-sha256 of the *address* from which you took the first coins.  
+
+To grab these coins, you will need to use AddressFromPrivateKey() to generate that address, search the blockchain for the txid, and try to send an output to yourself, the same way as with the first transaction you created.
+
+There are 2 more outputs, both secured with private keys that are double-sha256s of 2-digit numbers (ascii-encoded).  Try to find them and grab them.
+
+Harder to find:  The two-digit private key outputs form a chain, with the change of the first transaction leading to the next transaction.  After these two outputs were created, 3.35968754 coins (335968754 satoshis) were sent back to a witness_v0 address.
+
+The txid of this final transaction with 1 input and 1 output is the private key for even more coins.
+Note that in bitcoin, txids are displayed backwards!  For whatever reason, the actual sha256 output has all its bytes reversed before being shown or saved to disk.  Functions for dealing with reversed txids are in the btcd libraries, so this should be possible.
+
+Note that in many cases, someone else in the class may have grabbed the coins before you.  That's OK, just write down where you found the coins to be and the private key you would have used to take them.
+
+
 ## Submitting work
 
 Submit your homework... ON THE BLOCKCHAIN!
 Use OP_RETURN!
 
-There is a 
+The opreturn.go file will walk you through how to make an OP_RETURN transaction.
+
+These transactions are on the public blockchain, and we'll find them there.  No need for e-mail or file attachments!
+
+OP_RETURN outputs start with a single opcode (OP_RETURN) which terminates script execution.  So the output can never be spend, and is thus not added to the utxo database.  You can put whatever data you want after the OP_RETURN, though it's limited to 40 bytes in length.
+
+For this assignment, sending your coins to an OP_RETURN output with your name or MIT ID number is cryptographic proof that you sent the coins (or someone else did, impersonating you!)
+
+Use opreturn.go to create transactions FROM the transactions you sent to yourself using EZTxBuilder().  The created transaction will send from and to the same address, adding an OP_RETURN output.  Broadcast this to the network, hope it gets into a block, and you're done! 
 
 To parse other OP_RETURNs, or the one you made yourself, try using python.
 
 Here's an example transaction:
-c29dc7b974901989c156578fc8dd341752bf28e415191bb1dc4b3aabc3ac11c5
+`c29dc7b974901989c156578fc8dd341752bf28e415191bb1dc4b3aabc3ac11c5`
 the OP_RETURN is 363839322054657374206f7574707574
 
 Load up python in your terminal (most linux and mac terminals have it) by running ` $ python `
@@ -128,3 +150,5 @@ from there:
 '6892 Test output' ```
 
 Prefix all your OP_RETURNs with 6892 so it's easy to search for them.
+
+If you only grab a little bit of money and send an OP_RETURN, that's fine.  If you manage to get some of the 

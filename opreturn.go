@@ -50,7 +50,8 @@ func OpReturnTxBuilder() *wire.MsgTx {
 	opReturnOutput := wire.NewTxOut(0, opReturnScript) // keep it as 0 value
 
 	// next, build the pubkey hash output.  This the same as before in the EZ function.
-	// put the address you're sending to here
+	// put the address you're sending to here.  It's the same as the address you're
+	// spending from!
 	sendToAddressString := ""
 	sendToAddress, err := btcutil.DecodeAddress(sendToAddressString, testnet3Parameters)
 	if err != nil {
@@ -72,14 +73,8 @@ func OpReturnTxBuilder() *wire.MsgTx {
 	tx.AddTxOut(p2pkhOutput)
 
 	// finally we need to sign.  Same as EZ func.
-	// put the address you're sending "from" here
-	prevAddressString := ""
-	prevAddress, err := btcutil.DecodeAddress(prevAddressString, testnet3Parameters)
-	if err != nil {
-		panic(err)
-	}
-
-	spendFromScript, err := txscript.PayToAddrScript(prevAddress)
+	// we already know the address you're sending from
+	spendFromScript, err := txscript.PayToAddrScript(sendToAddress)
 
 	phraseHash := chainhash.DoubleHashB([]byte("private key here"))
 	priv, _ := btcec.PrivKeyFromBytes(btcec.S256(), phraseHash)
