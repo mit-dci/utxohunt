@@ -53,8 +53,8 @@ Save this address (it starts with an "m").  You'll need this to send the money t
 
 A _block explorer_ is a website which watches the blockchain and parses out information about blocks, addresses, and transactions.  You can use this blockexplorer to see what's happening on the Bitcoin testnet: [https://testnet.smartbit.com.au/](https://testnet.smartbit.com.au/).
 
-We created a transaction with hundreds of outputs.
-`a56f06aa7dbc3b3ba86390f163f3639e962d3e223e9ca070002288eb555bb830` is the "txid" or unique identifier of the transaction.  (The txid is the hash of the serialized transaction)
+We created a transaction with one hundred outputs.
+`d44a44f82955d782edb1e192eaa8d4958e85543f1badfdd990118d9b81191fcc` is the "txid" or unique identifier of the transaction.  (The txid is the hash of the serialized transaction)
 
 This transaction has many outputs.  The outputs are on the right side, and the single input (witness_v0_keyhash) is on the left side.
 
