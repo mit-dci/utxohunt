@@ -6,14 +6,12 @@ Testnet3 is a network for testing out bitcoin.  It works almost exactly like the
 
 As we went over in class, the bitcoin ledger is built out of transactions; transactions are really all there is.  Transactions are grouped into blocks, and blocks are linked together in a chain, giving a universally agreed upon sequence of transactions.  Transactions have two components: inputs and outputs.  The coins exist as unspent transaction outputs, or UTXOs.  When outputs are spent (as inputs) they are completely consumed.
 
-In this lab you'll be performing many of the functions of wallet software, by identifying outputs to spend
+In this lab you'll be performing many of the functions of wallet software, by identifying outputs to spend, creating transactions, signing them, and broadcasting them to the network.  Most wallet software does this all automatically, but this assignment is more manual so you can see how it works.
 
 
 ## Setup
 
 [Get go installed](https://golang.org/), either on Athena or your local linux machine.  Mac and Windows will probably work, but are not supported (Don't ask us how to get things working on mac/win)
-
-TODO: Figure out submission.  It's easier if you have a github account if you don't already have one.  If you don't have and don't want a github account submission to a local git server is also OK.
 
 Once go is running and you have a $GOPATH set, get the class repo:
 
