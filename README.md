@@ -1,4 +1,4 @@
-# bitgorand
+# utxohunt
 
 For the first assignment, we're going to make some transactions on the Bitcoin test network.  We're using btcd as our libraries, which is bitcoin written in golang.  The goal is to understand how transactions are constructed and signed, and to become familiar with the utxo model bitcoin uses.
 
