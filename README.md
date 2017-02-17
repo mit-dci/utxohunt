@@ -56,7 +56,7 @@ A _block explorer_ is a website which watches the blockchain and parses out info
 We created a transaction with one hundred outputs.
 `b3975fe93f93d028bcc5fb1c1a3f7c1b77c9a558ace98edeba27be6904fcc61b` is the "txid" or unique identifier of the transaction.  (The txid is the hash of the serialized transaction)
 
-This transaction has many outputs.  The outputs are on the right side, and the single input (witness_v0_keyhash) is on the left side.
+This transaction has many outputs.  The outputs are on the right side, and the inputs (witness_v0_keyhash) are on the left side.
 
 Outpoints are defined by a txid and the output number.  On the block explorer page, the output on the top right is output 0, then 1, 2, etc.
 
