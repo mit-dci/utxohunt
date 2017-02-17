@@ -17,7 +17,7 @@ In this lab you'll be performing many of the functions of wallet software, by id
 
 Once go is running and you have a $GOPATH set, get the class repo:
 
-$ go get -v github.com/mit-dci/6.892-public
+$ go get -v github.com/mit-dci/utxohunt
 
 In this repo there are 4 files:
 ```
