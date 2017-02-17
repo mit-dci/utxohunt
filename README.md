@@ -45,9 +45,9 @@ Similar to eztxbuilder.go, but creates a transaction with 1 input, and 2 outputs
 
 ## Task 1: Create a Bitcoin Address
 
-First, look in utxohunt/main.go, and make a keypair.  The AddressFromPrivateKey() function will help you.  Put your own random string in to generate a private key.  If you call the AddressFromPrivateKey() function, it will return that address as a string, as well as give you the compressed public key and pay to witness pubkey hash script.
+First, look in utxohunt/addrfrompriv.go, and make a keypair.  The AddressFromPrivateKey() function will help you.  Put your own random string in to generate a private key.  If you call the AddressFromPrivateKey() function, it will return that address as a string, as well as give you the compressed public key and pay to witness pubkey hash script.
 
-Save this address (it starts with an "m").  You'll need this to send the money to yourself.
+Save this address (it starts with an "m" or "n").  You'll need this to send the money to yourself.
 
 ## Task 2: Find the first treasure hunt transaction
 
