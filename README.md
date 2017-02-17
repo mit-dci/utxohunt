@@ -151,4 +151,4 @@ from there:
 
 Prefix all your OP_RETURNs with 6892 so it's easy to search for them.
 
-If you only grab a little bit of money and send an OP_RETURN, that's fine.  If you manage to get some of the 
+If you only grab a little bit of money and send an OP_RETURN, that's fine.  If you manage to get some of the bonus utxos and send OP_RETURNs, even better!  If you want to get really fancy, try aggregating all your outputs into a single, higher value tx output. (Code left as excercise to the reader)
