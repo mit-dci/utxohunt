@@ -1,6 +1,7 @@
 # utxohunt
 
-### Office hours for this lab: Tuesday, Feb 21st, 1 to 4pm, E15-357 (Media lab DCI office)
+### Office hours for this lab: Tuesday, Feb 21st, 3 to 6pm, E15-357 (Media lab DCI office)
+(Note -- I didn't realize Tuesday was on a Monday schedule; moved office hours a bit later)
 
 For the first assignment, we're going to make some transactions on the Bitcoin test network.  We're using btcd as our libraries, which is bitcoin written in golang.  The goal is to understand how transactions are constructed and signed, and to become familiar with the utxo model bitcoin uses.
 
