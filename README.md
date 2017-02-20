@@ -2,6 +2,10 @@
 
 ### Office hours for this lab: Tuesday, Feb 21st, 3 to 5:30pm, E15-357 (Media Lab DCI office)
 
+If you feel a bit lost and want more help with this, or if you breeze through this and want to learn harder stuff, or you just want to say hi, there will be office hours held in the MIT DCI office, E15-357, on Tuesday.
+
+The OP_RETURNs are due by block #1090833.  Given the normal block arrival time, that should be at some point Thursday the 23rd.  (If blocks come out super quickly, we'll extend the block deadline as this class is still based on unix time rather than block height.)
+
 For the first assignment, we're going to make some transactions on the Bitcoin test network.  We're using btcd as our libraries, which is bitcoin written in golang.  The goal is to understand how transactions are constructed and signed, and to become familiar with the utxo model bitcoin uses.
 
 Testnet3 is a network for testing out bitcoin.  It works almost exactly like the regular bitcoin network (except for small changes to addresses and the difficulty of proof of work) but everyone agrees that testnet coins are not worth anything.  This isn't enforced by anything on the network, it's just something people decide.  The fact that it's testnet3 indicates that this rule failed for the original testnet and testnet2, when people started trading the testnet coins for mainnet coins.
