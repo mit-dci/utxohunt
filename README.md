@@ -2,9 +2,13 @@
 
 ### Office hours for this lab: Tuesday, Feb 21st, 3 to 5:30pm, E15-357 (Media Lab DCI office)
 
-If you feel a bit lost and want more help with this, or if you breeze through this and want to learn harder stuff, or you just want to say hi, there will be office hours held in the MIT DCI office, E15-357, on Tuesday.
+If you feel a bit lost and want more help with this, or if you breeze through this and want to learn harder stuff, or you just want to say hi, there will be office hours held in the MIT DCI office, E15-357, on Tuesday.  You can ask questions at other times by posting them as issues in this repository.
+
+### Due Date
 
 The OP_RETURNs are due by block #1090833.  Given the normal block arrival time, that should be at some point Thursday the 23rd.  (If blocks come out super quickly, we'll extend the block deadline as this class is still based on unix time rather than block height.)
+
+## Lab 1
 
 For the first assignment, we're going to make some transactions on the Bitcoin test network.  We're using btcd as our libraries, which is bitcoin written in golang.  The goal is to understand how transactions are constructed and signed, and to become familiar with the utxo model bitcoin uses.
 
@@ -17,7 +21,7 @@ In this lab you'll be performing many of the functions of wallet software, by id
 
 ## Setup
 
-[Install go](https://golang.org/), either on Athena or your local linux machine.  Mac and Windows will most likely workas well, but are not officially supported (Don't ask us how to get things working on mac/win)
+[Install go](https://golang.org/), either on Athena or your local linux machine.  Mac and Windows will most likely work as well, but are not officially supported (Don't ask us how to get things working on mac/win)
 
 Once go is running and you have a $GOPATH set, get the class repo:
 
