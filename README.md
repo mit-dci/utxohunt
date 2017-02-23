@@ -108,7 +108,7 @@ transaction prior to signing.  An invalid signature can also be caused
 by using the wrong key.  In that case, you will usually get this
 error:
 
-3.  64: non-mandatory-script-verify-flag (Script failed an OP_EQUALVERIFY operation).  This means you're probably using the wrong key to sign with, as the public key used and public key hash in the previous output script don't match.
+3.  16: mandatory-script-verify-flag (Script failed an OP_EQUALVERIFY operation).  This means you're probably using the wrong key to sign with, as the public key used and public key hash in the previous output script don't match.
 
 4.  TX decode failed.  That means you're missing some characters, or the transaction is otherwise unintelligable to the bitcoin-cli parser.
 
