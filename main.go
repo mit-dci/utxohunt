@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/btcsuite/btcd/chaincfg"
+	"github.com/adiabat/btcd/chaincfg"
 )
 
 var (

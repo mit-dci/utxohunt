@@ -3,17 +3,18 @@ package main
 import (
 	"fmt"
 
-	"github.com/btcsuite/btcd/btcec"
-	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/btcsuite/btcd/txscript"
-	"github.com/btcsuite/btcd/wire"
-	"github.com/btcsuite/btcutil"
+	"github.com/adiabat/btcd/btcec"
+	"github.com/adiabat/btcd/chaincfg/chainhash"
+	"github.com/adiabat/btcd/txscript"
+	"github.com/adiabat/btcd/wire"
+	"github.com/adiabat/btcutil"
 )
 
 func EZTxBuilder() *wire.MsgTx {
 
 	// create a new, empty transaction, set version to 2
-	tx := wire.NewMsgTx(2)
+	tx := wire.NewMsgTx()
+	tx.Version = 2
 
 	// we need to add at least one input and one output.  Lets build the input first
 	// inputs consist of a previous output point, and a witness (signature data)
@@ -36,7 +37,7 @@ func EZTxBuilder() *wire.MsgTx {
 		outpointTxid, 0) // replace 0 with the output you want to spend
 
 	// create the TxIn, with empty sigscript field
-	input := wire.NewTxIn(outPoint, nil)
+	input := wire.NewTxIn(outPoint, nil, nil)
 
 	// Next, we create the output.  Outputs are [amount, address] pairs, where
 	// amounts are 64-bit signed integers, and addresses are scripts that run on the

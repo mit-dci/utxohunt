@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/btcsuite/btcd/btcec"
-	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/btcsuite/btcd/txscript"
-	"github.com/btcsuite/btcd/wire"
-	"github.com/btcsuite/btcutil"
+	"github.com/adiabat/btcd/btcec"
+	"github.com/adiabat/btcd/chaincfg/chainhash"
+	"github.com/adiabat/btcd/txscript"
+	"github.com/adiabat/btcd/wire"
+	"github.com/adiabat/btcutil"
 )
 
 func OpReturnTxBuilder() *wire.MsgTx {
@@ -16,7 +16,8 @@ func OpReturnTxBuilder() *wire.MsgTx {
 	// include arbitrary data that will be saved but ignored by the bitcoin network
 
 	// create a new, empty transaction, set version to 2. Same as EZ
-	tx := wire.NewMsgTx(2)
+	tx := wire.NewMsgTx()
+	tx.Version = 2
 
 	// put the input txid here (your own)
 	hashStr := ""
@@ -29,7 +30,7 @@ func OpReturnTxBuilder() *wire.MsgTx {
 	outPoint := wire.NewOutPoint(outpointTxid, 0)
 
 	// create the TxIn, with empty sigscript field
-	input := wire.NewTxIn(outPoint, nil)
+	input := wire.NewTxIn(outPoint, nil, nil)
 
 	// done with inputs for now.  Build outputs.  There will be 2 outputs,
 	// the OP_RETURN output and the normal pubkey hash output.

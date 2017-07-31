@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 
-	"github.com/btcsuite/btcd/btcec"
-	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/btcsuite/btcd/txscript"
-	"github.com/btcsuite/btcutil"
+	"github.com/adiabat/btcd/btcec"
+	"github.com/adiabat/btcd/chaincfg/chainhash"
+	"github.com/adiabat/btcd/txscript"
+	"github.com/adiabat/btcutil"
 )
 
 func AddressFromPrivateKey() (string, error) {
