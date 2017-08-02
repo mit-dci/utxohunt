@@ -7,23 +7,23 @@ import (
 )
 
 var (
-	// we're running on testnet3
-	testnet3Parameters = &chaincfg.TestNet3Params
+	// we're running on BC2.  Which now uses mainnet addresses.
+	testnet3Parameters = &chaincfg.MainNetParams
 )
 
 // This is the main function -- c
 
 func main() {
-	fmt.Printf("6.892 class program - hw1 - utxohunt\n")
+	fmt.Printf("BC2 utxohunt\n")
 
 	// Task #1 make an address pair
 	// Call AddressFrom PrivateKey() to make a keypair
 
-	//	s, err := AddressFromPrivateKey()
-	//	if err != nil {
-	//		panic(err)
-	//	}
-	//	fmt.Printf("address: %s\n", s)
+	s, err := AddressFromPrivateKey()
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("address: %s\n", s)
 
 	// Task #2 make a transaction
 	// Call EZTxBuilder to make a transaction
